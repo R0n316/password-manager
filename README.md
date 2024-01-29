@@ -7,14 +7,14 @@
 ### Стек технологий:
 
 * back-end
-  * Java (jdk version 19) <img src="226777.png" style="width:20px; height:20px">
-  * Spring framework (Проект работает на spring boot) <img src="spring-icon.svg" style="width:20px; height:20px">
-  * PostgreSQL (version 16) <img src="Postgresql_elephant.svg" style="width:20px; height:20px">
-  * Project Lombok <img src="45949248.png" style="width:20px; height:20px">
+  * Java (jdk version 19) <img src="readme/226777.png" style="width:20px; height:20px">
+  * Spring framework (Проект работает на spring boot) <img src="readme/spring-icon.svg" style="width:20px; height:20px">
+  * PostgreSQL (version 16) <img src="readme/Postgresql_elephant.svg" style="width:20px; height:20px">
+  * Project Lombok <img src="readme/45949248.png" style="width:20px; height:20px">
 * front-end
-  * HTML <img src="HTML5_Badge.svg" style="width:20px; height:20px">
-  * CSS <img src="CSS3_logo.svg" style="width:20px; height:20px">
-  * Thymeleaf <img src="thymeleaf-seeklogo.svg" style="width:20px; height:20px">
+  * HTML <img src="readme/HTML5_Badge.svg" style="width:20px; height:20px">
+  * CSS <img src="readme/CSS3_logo.svg" style="width:20px; height:20px">
+  * Thymeleaf <img src="readme/thymeleaf-seeklogo.svg" style="width:20px; height:20px">
 
 ## Описание
 
@@ -38,7 +38,7 @@
 
 1. База данных
    1. Создайте новую базу данных в pgAdmin4
-   2. Откройте окно __restore__ и выберите файл для backup ![restore window](restore_window.png)
+   2. Откройте окно __restore__ и выберите файл для backup ![restore window](readme/restore_window.png)
 2. Сервер
    1. Установите ___[maven](https://maven.apache.org/download.cgi)___
    2. Установите ___[jdk 19](https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html)___
