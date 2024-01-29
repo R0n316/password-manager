@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о сайтах</title>
+    <link rel="stylesheet" th:href="@{/static/styles/mainPageStyle.css}">
+</head>
+<body>
+
+
+<div th:each="website:${websites}">
+    <a th:href="@{/web-info/{id}(id=${website.websiteId})}">
+        <div class="website-div">
+            <span th:text="${website.name}"></span>
+        </div>
+    </a>
+</div>
+<hr>
+<div class="add-button">
+    <a class="add-button" href="/web-info/new">Добавить сайт</a>
+</div>
+<br>
+<br>
+<form method="POST" th:action="@{/logout}">
+    <input  class="logout" type="submit" value="Выйти">
+</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" th:href="@{/static/styles/errorsStyle.css}">
+    <link rel="stylesheet" th:href="@{/static/styles/style.css}">
+</head>
+<body class="login">
+<div class="container">
+    <h1 class="title">Менеджер паролей</h1>
+    <form method="POST" th:action="@{/auth/registration}" th:object="${person}">
+        <br>
+        <label for="username">Введите имя пользователя: </label>
+        <br>
+        <input class="data" type="text" id="username" th:field="*{username}">
+        <br>
+        <div class="error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username error</div>
+        <br>
+        <label for="birth_year">Введите дату рождения: </label>
+        <br>
+        <input class="data" type="number" id="birth_year" th:field="*{yearOfBirth}">
+        <br>
+        <div class="error" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">Birth year error</div>
+        <br>
+        <label for="password">Введите пароль: </label>
+        <div class="password-container">
+            <input class="data" type="password" id="password" th:field="*{password}">
+            <img th:src="@{/static/images/eye-close.svg}" alt="password visibility" onclick="showPassword()">
+        </div>
+        <br>
+        <div class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</div>
+        <br>
+        <input class="send-button" type="submit" value="Зарегистрироваться!">
+    </form>
+</div>
+<script th:src="@{/static/scripts/script.js}"></script>
+</body>
+</html>

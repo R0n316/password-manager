@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить новый веб-сайт</title>
+    <link rel="stylesheet" th:href="@{/static/styles/errorsStyle.css}">
+    <link rel="stylesheet" th:href="@{/static/styles/style.css}">
+</head>
+<body style="padding-left: 15px">
+<div class="container">
+    <form th:method="POST" th:action="@{/web-info}" th:object="${website}">
+        <br>
+        <label for="name">Введите название сайта: </label>
+        <br>
+        <input class="data" type="text" name="name" id="name">
+        <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+        <br>
+        <br>
+        <label for="login">Введите логин: </label>
+        <br>
+        <input class="data" type="text" name="login" id="login">
+        <div class="error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}"></div>
+        <br>
+        <br>
+        <label for="password">Введите пароль: </label>
+        <br>
+        <div class="password-container">
+            <input class="data" type="text" name="password" id="password">
+            <img th:src="@{/static/images/eye-close.svg}" alt="password visibility" onclick="showPassword()">
+        </div>
+        <div class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+        <br>
+        <input type="submit" class="send-button" value="Добавить">
+    </form>
+</div>
+<script th:src="@{/static/scripts/script.js}"></script>
+</body>
+</html>

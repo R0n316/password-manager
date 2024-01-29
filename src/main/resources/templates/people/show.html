@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о пользователе</title>
+    <link rel="stylesheet" th:href="@{/static/styles/errorsStyle.css}">
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/people/{id}(id=${person.personId})}" th:object="${person}">
+    <label for="username">Имя пользователя: </label>
+    <input type="text" id="username" th:field="*{username}">
+    <div class="error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username error</div>
+    <br>
+    <label for="birth_year">Дата рождения: </label>
+    <input type="text" id="birth_year" th:field="*{yearOfBirth}">
+    <div class="error" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">Birth year error</div>
+    <br>
+    <label for="password">Пароль: </label>
+    <input type="password" id="password" th:field="*{password}">
+    <div class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</div>
+    <br>
+    <label for="role">Роль пользователя: </label>
+    <select th:field="*{role}" id="role">
+        <option value="ROLE_USER">ROLE_USER</option>
+        <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+    </select>
+    <br>
+    <input type="submit" value="Изменить">
+</form>
+<br>
+<hr>
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.personId})}">
+    <input type="submit" value="Удалить пользователя">
+</form>
+</body>
+</html>

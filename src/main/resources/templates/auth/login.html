@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/static/styles/errorsStyle.css}">
+    <link rel="stylesheet" th:href="@{/static/styles/style.css}">
+</head>
+<body class="login">
+<div class="container">
+    <h1 class="title">Менеджер паролей</h1>
+    <form name="auth-form" method="POST" action="/process_login">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+        <label for="username">Введите имя пользователя:</label>
+        <br>
+        <input class="data  " type="text" name="username" id="username">
+        <br>
+        <br>
+        <label for="password">Введите пароль:</label>
+        <div class="password-container">
+            <input class="data" type="password" name="password" id="password">
+            <img th:src="@{/static/images/eye-close.svg}" alt="password visibility" onclick="showPassword()">
+        </div>
+        <br>
+        <div class="error" th:if="${param.error}">
+            Неправильный логин или пароль
+        </div>
+        <input type="submit" class="send-button" value="Войти">
+    </form>
+    <hr>
+    <form method="get" th:action="@{/auth/registration}">
+        <input type="submit" class="send-button" value="Регистрация">
+    </form>
+</div>
+<script th:src="@{/static/scripts/script.js}"></script>
+</body>
+</html>
