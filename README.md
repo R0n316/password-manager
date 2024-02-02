@@ -36,16 +36,13 @@
 
 ## Запуск проекта
 
-1. База данных
-   1. Создайте новую базу данных в pgAdmin4
-   2. Откройте окно __restore__ и выберите файл для backup ![restore window](readme/restore_window.png)
-2. Сервер
-   1. Установите ___[maven](https://maven.apache.org/download.cgi)___
-   2. Установите ___[jdk 19](https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html)___
-   3. Откройте терминал в папке с проектом
-   4. Введите команду ```mvnw package```
-   5. Перейдите в папку target
-   6. Запустите сервер с помощью команды```java -jar *название jar-файла*```
+1. Установить ___[Docker](https://www.docker.com/products/docker-desktop/)___
+2. Открыть терминал в папке с проектом
+3. выполнить команду
+
+```shell
+docker-compose up
+```
 
 ---
 
