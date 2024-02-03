@@ -36,7 +36,7 @@
 
 ## Запуск проекта
 
-1. Установить ___[Docker](https://www.docker.com/products/docker-desktop/)___(до версии 4.22)
+1. Установить ___[Docker](https://www.docker.com/products/docker-desktop/)___ (до версии 4.22)
 2. Открыть терминал в папке с проектом
 3. выполнить команду
 
